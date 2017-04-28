@@ -17,6 +17,11 @@ public class MainActivity extends AppCompatActivity {
     private Random rand = new Random();
     private Character boxLetter; // the letter that will show up in the center of the screen
     private int score;
+    int amountA=0;
+    int amountB=0;
+    int amountC=0;
+    int amountD=0;
+
 
 
 
@@ -28,14 +33,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
     protected void onStart(View) {
-
+        
         long secondCounter = System.currentTimeMillis() * 1000; //returns the current millseconds
         while (secondCounter < (secondCounter * 5000)) { //to be less then 5 seconds
             this.letterCreator();
             TextView textView = (TextView) findViewById(R.id.main);
             textView.setText(boxLetter);
-
-
 
         }
 
@@ -70,22 +73,27 @@ public class MainActivity extends AppCompatActivity {
             break;
         } else if (this.queue.size == 0){
             queue.add(boxLetter);
+            this.setScore(boxLetter);
             TextView textView = (TextView) findViewById(R.id.q1);
             textView.setText(boxLetter);
         } else if (this.queue.size == 1){
             queue.add(boxLetter);
+            this.setScore(boxLetter);
             TextView textView = (TextView) findViewById(R.id.q2);
             textView.setText(boxLetter);
         } else if (this.queue.size == 2){
             queue.add(boxLetter);
+            this.setScore(boxLetter);
             TextView textView = (TextView) findViewById(R.id.q3);
             textView.setText(boxLetter);
         } else if (this.queue.size == 3){
             queue.add(boxLetter);
+            this.setScore(boxLetter);
             TextView textView = (TextView) findViewById(R.id.q4);
             textView.setText(boxLetter);
         } else if (this.queue.size == 4){
             queue.add(boxLetter);
+            this.setScore(boxLetter);
             TextView textView = (TextView) findViewById(R.id.q5);
             textView.setText(boxLetter);
         }
@@ -139,3 +147,46 @@ public class MainActivity extends AppCompatActivity {
 
 
 }
+    public void setScore(Character fromBox) {
+        if (fromBox=='a'){
+            amountA++;
+            if (amountA == 3){
+                score = score * 2;
+            } else if (amountA > 3){
+                score = 0;
+            } else {
+                score++;
+            }
+        } else if (){
+            if (boxLetter=='b'){
+                amountB++;
+                if (amountB == 3){
+                    score = score * 2;
+                } else if (amountB > 3){
+                    score = 0;
+                } else {
+                    score++;
+                }
+            }
+        } else if (boxLetter=='c'){
+            amountC++;
+            if (amountC == 3){
+                score = score * 2;
+            } else if (amountC > 3){
+                score = 0;
+            } else {
+                score++;
+            }
+        } else {
+            amountD++;
+            if (amountD == 3){
+                score = score * 2;
+            } else if (amountD > 3){
+                score = 0;
+            } else {
+                score++;
+            }
+        }
+    }
+
+
