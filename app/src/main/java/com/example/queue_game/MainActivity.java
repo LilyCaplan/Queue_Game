@@ -11,7 +11,9 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
     private Queue<Character> queue = new LinkedList<>();
     private Random rand = new Random();
-    charachter
+    private Character boxLetter; // the letter that will show up in the center of the screen
+    private int score;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +23,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
     protected void onStart(View){
-        //for the length of three seconds
+
+        long secondCounter = System.currentTimeMillis() * 1000; //returns the current millseconds
+        while (secondCounter <(secondCounter*5000)){ //to be less then 5 seconds
+
+        }
+
+
         // chachter pops up in text view
         // press enqueue to enqueue that letter  into the queue text box
         // or press dequeue to dequeue letter from begining of queue
@@ -33,12 +41,16 @@ public class MainActivity extends AppCompatActivity {
             int letterPicker= rand.nextInt(4)+1;
             switch (letterPicker){
                 case 1 :
+                    boxLetter = 'a';
                     break;
                 case 2 :
+                    boxLetter = 'b';
                     break;
                 case 3 :
+                    boxLetter = 'c';
                     break;
                 case 4 :
+                    boxLetter = 'd';
                     break;
                 default:
                     System.out.println("Didn't work");
