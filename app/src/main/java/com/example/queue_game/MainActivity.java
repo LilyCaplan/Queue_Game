@@ -17,8 +17,6 @@ public class MainActivity extends AppCompatActivity {
     private Random rand = new Random();
     private Character boxLetter; // the letter that will show up in the center of the screen
     private int score;
-    Button en = (Button) findViewById(R.id.enqueue);
-    Button de = (Button) findViewById(R.id.dequeue);
 
 
 
@@ -36,20 +34,11 @@ public class MainActivity extends AppCompatActivity {
             this.letterCreator();
             TextView textView = (TextView) findViewById(R.id.main);
             textView.setText(boxLetter);
-            //pressing enqueue goes into the queue
-            if () {
 
-            } else if () {
-                //pressing dequeque removes and shift
-            }
 
-            
 
         }
-        // chachter pops up in text view
-        // press enqueue to enqueue that letter  into the queue text box
-        // or press dequeue to dequeue letter from begining of queue
-        //if user has dequeued shift the visuals for the queue elemnts over
+
 
     }
     public void letterCreator(){
@@ -79,23 +68,23 @@ public class MainActivity extends AppCompatActivity {
     public void enqueue() {
         if (this.queue.size() == 5){
             break;
-        } else if (size == 0){
+        } else if (this.queue.size == 0){
             queue.add(boxLetter);
             TextView textView = (TextView) findViewById(R.id.q1);
             textView.setText(boxLetter);
-        } else if (size == 1){
+        } else if (this.queue.size == 1){
             queue.add(boxLetter);
             TextView textView = (TextView) findViewById(R.id.q2);
             textView.setText(boxLetter);
-        } else if (size == 2){
+        } else if (this.queue.size == 2){
             queue.add(boxLetter);
             TextView textView = (TextView) findViewById(R.id.q3);
             textView.setText(boxLetter);
-        } else if (size == 3){
+        } else if (this.queue.size == 3){
             queue.add(boxLetter);
             TextView textView = (TextView) findViewById(R.id.q4);
             textView.setText(boxLetter);
-        } else if (size == 4){
+        } else if (this.queue.size == 4){
             queue.add(boxLetter);
             TextView textView = (TextView) findViewById(R.id.q5);
             textView.setText(boxLetter);
@@ -105,8 +94,46 @@ public class MainActivity extends AppCompatActivity {
     public void dequeue() {
         if (this.queue.size()==1){
             //remove elemnt
+        } else if (this.queue.size()== 2)  {
+            this.queue.remove();
+            TextView textView = (TextView) findViewById(R.id.q1);
+            textView.setText("");
+            textView.setText(queue.peek());
+            TextView nextView = (TextView) findViewById(R.id.q2);
+            nextView.setText("");
+        } else if (this.queue.size()== 3){
+            this.queue.remove();
+            TextView textView = (TextView) findViewById(R.id.q1);
+            textView.setText("");
+            textView.setText(queue.peek());
+            TextView secondView = (TextView) findViewById(R.id.q2);
+            TextView thirdView = (TextView) findViewById(R.id.q3);
+            secondView.setText(thirdView.getText());
+            thirdView.setText("");
+        } else if (this.queue.size()== 4){
+            this.queue.remove();
+            TextView textView = (TextView) findViewById(R.id.q1);
+            textView.setText("");
+            textView.setText(queue.peek());
+            TextView secondView = (TextView) findViewById(R.id.q2);
+            TextView thirdView = (TextView) findViewById(R.id.q3);
+            secondView.setText(thirdView.getText());
+            TextView fourthView = (TextView) findViewById(R.id.q4);
+            thirdView.setText(fourthView.getText());
+            fourthView.setText("");
         } else {
-            //remove element and shift
+            this.queue.remove();
+            TextView textView = (TextView) findViewById(R.id.q1);
+            textView.setText("");
+            textView.setText(queue.peek());
+            TextView secondView = (TextView) findViewById(R.id.q2);
+            TextView thirdView = (TextView) findViewById(R.id.q3);
+            secondView.setText(thirdView.getText());
+            TextView fourthView = (TextView) findViewById(R.id.q4);
+            thirdView.setText(fourthView.getText());
+            TextView fifthView = (TextView) findViewById(R.id.q5);
+            fourthView.setText(fifthView.getText());
+            fifthView.setText("");
         }
     }
 
