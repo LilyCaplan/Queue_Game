@@ -33,6 +33,10 @@
         android:text="@string/dequeue"
         tools:layout_editor_absoluteX="228dp"
         tools:layout_editor_absoluteY="426dp" />
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3f5b2a621781ba50b0b92cdfb41c519d7c5f0920
 
     <TextView
         android:id="@+id/q1"
