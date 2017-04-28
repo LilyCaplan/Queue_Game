@@ -71,27 +71,27 @@ public class MainActivity extends AppCompatActivity {
     public void enqueue() {
         if (this.queue.size() == 5){
             break;
-        } else if (this.queue.size == 0){
+        } else if (this.queue.size() == 0){
             queue.add(boxLetter);
             this.setScore(boxLetter);
             TextView textView = (TextView) findViewById(R.id.q1);
             textView.setText(boxLetter);
-        } else if (this.queue.size == 1){
+        } else if (this.queue.size() == 1){
             queue.add(boxLetter);
             this.setScore(boxLetter);
             TextView textView = (TextView) findViewById(R.id.q2);
             textView.setText(boxLetter);
-        } else if (this.queue.size == 2){
+        } else if (this.queue.size() == 2){
             queue.add(boxLetter);
             this.setScore(boxLetter);
             TextView textView = (TextView) findViewById(R.id.q3);
             textView.setText(boxLetter);
-        } else if (this.queue.size == 3){
+        } else if (this.queue.size() == 3){
             queue.add(boxLetter);
             this.setScore(boxLetter);
             TextView textView = (TextView) findViewById(R.id.q4);
             textView.setText(boxLetter);
-        } else if (this.queue.size == 4){
+        } else if (this.queue.size() == 4){
             queue.add(boxLetter);
             this.setScore(boxLetter);
             TextView textView = (TextView) findViewById(R.id.q5);
