@@ -23,9 +23,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart(View){
         //for the length of three seconds
         // chachter pops up in text view
-        // press enqueue to enqueue that letter  into the text box of the queue
-        // or dequeue to dequeue letter from ebgining of queue
-        //if user has dequeued shift elemnts over
+        // press enqueue to enqueue that letter  into the queue text box
+        // or press dequeue to dequeue letter from begining of queue
+        //if user has dequeued shift the visuals for the queue elemnts over
 
 
     }
