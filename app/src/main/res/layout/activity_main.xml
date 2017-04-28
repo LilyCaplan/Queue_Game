@@ -7,6 +7,7 @@
     tools:context="com.example.queue_game.MainActivity">
 
     <TextView
+        android:id="@+id/main"
         android:layout_width="160dp"
         android:layout_height="122dp"
         android:text="Hello World!"
@@ -17,15 +18,16 @@
         app:layout_constraintVertical_bias="0.244" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/enqueue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/enqueue"
+        android:onClick="enqueue"
         tools:layout_editor_absoluteX="59dp"
         tools:layout_editor_absoluteY="426dp" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/dequeue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/dequeue"
@@ -33,7 +35,7 @@
         tools:layout_editor_absoluteY="426dp" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/q1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
@@ -42,7 +44,7 @@
         tools:layout_editor_absoluteY="360dp" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/q2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
@@ -50,7 +52,7 @@
         tools:layout_editor_absoluteY="360dp" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/q3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
@@ -66,7 +68,7 @@
         tools:layout_editor_absoluteY="360dp" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="q4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
