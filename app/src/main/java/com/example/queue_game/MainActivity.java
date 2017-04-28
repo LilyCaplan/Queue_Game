@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         int letterPicker = rand.nextInt(4) + 1;
         switch (letterPicker) {
             case 1:
-                boxLetter = 'a';
+                boxLetter = (char) R.string.A;
                 break;
             case 2:
                 boxLetter = 'b';

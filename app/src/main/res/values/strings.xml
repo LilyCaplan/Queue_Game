@@ -7,5 +7,6 @@
     <string name="C">C</string>
     <string name="D">D</string>
     <string name="E">E</string>
+    <string name="randomChar">R</string>
 
 </resources>

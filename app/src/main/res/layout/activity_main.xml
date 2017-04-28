@@ -15,12 +15,16 @@
         android:text="@string/enqueue"
         android:onClick="enqueue"
         android:layout_marginStart="69dp"
+        app:layout_constraintRight_toLeftOf="@+id/q3"
+        tools:layout_constraintRight_creator="1"
         tools:layout_constraintBottom_creator="1"
         app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="71dp"
         tools:layout_constraintLeft_creator="1"
         android:layout_marginBottom="25dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="69dp" />
+        android:layout_marginLeft="69dp"
+        android:layout_marginRight="71dp" />
 
     <Button
         android:id="@+id/dequeue"
@@ -30,13 +34,9 @@
         android:layout_marginEnd="55dp"
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintBottom_creator="1"
-        android:layout_marginStart="55dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        tools:layout_constraintLeft_creator="1"
         android:layout_marginBottom="25dp"
-        app:layout_constraintLeft_toLeftOf="@+id/q3"
-        android:layout_marginLeft="55dp"
         android:layout_marginRight="55dp" />
 
     <TextView
@@ -46,12 +46,12 @@
         android:text="@string/A"
         android:textSize="20sp"
         android:visibility="visible"
-        android:layout_marginStart="45dp"
+        android:layout_marginStart="56dp"
         app:layout_constraintBaseline_toBaselineOf="@+id/q2"
         tools:layout_constraintBaseline_creator="1"
         tools:layout_constraintLeft_creator="1"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="45dp" />
+        android:layout_marginLeft="56dp" />
 
     <TextView
         android:id="@+id/q2"
@@ -59,17 +59,10 @@
         android:layout_height="wrap_content"
         android:text="@string/B"
         android:textSize="20sp"
-        android:layout_marginStart="64dp"
-        app:layout_constraintRight_toLeftOf="@+id/q3"
         tools:layout_constraintRight_creator="1"
-        tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toTopOf="@+id/enqueue"
-        android:layout_marginEnd="65dp"
-        tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="63dp"
-        app:layout_constraintLeft_toLeftOf="@+id/q1"
-        android:layout_marginLeft="64dp"
-        android:layout_marginRight="65dp" />
+        app:layout_constraintRight_toRightOf="@+id/enqueue"
+        app:layout_constraintBaseline_toBaselineOf="@+id/q3"
+        tools:layout_constraintBaseline_creator="1" />
 
     <TextView
         android:id="@+id/q3"
@@ -77,12 +70,11 @@
         android:layout_height="wrap_content"
         android:text="@string/C"
         android:textSize="20sp"
-        tools:layout_constraintTop_creator="1"
+        app:layout_constraintRight_toLeftOf="@+id/dequeue"
         tools:layout_constraintRight_creator="1"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/q2" />
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toTopOf="@+id/dequeue"
+        android:layout_marginBottom="63dp" />
 
     <TextView
         android:id="@+id/q4"
@@ -90,25 +82,33 @@
         android:layout_height="wrap_content"
         android:text="@string/D"
         android:textSize="20sp"
-        android:layout_marginStart="15dp"
+        tools:layout_constraintRight_creator="1"
+        android:layout_marginEnd="55dp"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBaseline_toBaselineOf="@+id/q3"
         tools:layout_constraintBaseline_creator="1"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="@+id/dequeue"
-        android:layout_marginLeft="15dp" />
+        android:layout_marginRight="55dp" />
 
     <TextView
-        android:id="@+id/q5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/E"
-        android:textSize="20sp"
-        android:layout_marginEnd="43dp"
+        android:id="@+id/textView5"
+        android:layout_width="46dp"
+        android:layout_height="37dp"
+        android:text="@string/randomChar"
+        android:gravity="center"
+        android:background="@drawable/back"
+        app:layout_constraintRight_toLeftOf="@+id/q4"
+        tools:layout_constraintTop_creator="1"
         tools:layout_constraintRight_creator="1"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBaseline_toBaselineOf="@+id/q4"
-        tools:layout_constraintBaseline_creator="1"
-        android:layout_marginRight="43dp" />
+        android:layout_marginStart="101dp"
+        android:layout_marginEnd="101dp"
+        android:layout_marginTop="188dp"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/q1"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="101dp"
+        android:layout_marginRight="101dp"
+        app:layout_constraintHorizontal_bias="1.0"
+        tools:layout_editor_absoluteX="169dp" />
 
 
 </android.support.constraint.ConstraintLayout>
