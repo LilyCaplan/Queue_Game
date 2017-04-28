@@ -2,6 +2,7 @@ package com.example.queue_game;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -22,8 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-    protected void onStart(View){
-
+    protected void onStart(View view){
         long secondCounter = System.currentTimeMillis() * 1000; //returns the current millseconds
         while (secondCounter <(secondCounter*5000)){ //to be less then 5 seconds
 
