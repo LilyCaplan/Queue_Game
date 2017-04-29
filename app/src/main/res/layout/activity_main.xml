@@ -14,17 +14,17 @@
         android:layout_height="wrap_content"
         android:text="@string/enqueue"
         android:onClick="enqueue"
-        android:layout_marginStart="69dp"
+        android:layout_marginStart="76dp"
         app:layout_constraintRight_toLeftOf="@+id/q3"
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintBottom_creator="1"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginEnd="71dp"
+        android:layout_marginEnd="77dp"
         tools:layout_constraintLeft_creator="1"
         android:layout_marginBottom="25dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="69dp"
-        android:layout_marginRight="71dp" />
+        android:layout_marginLeft="76dp"
+        android:layout_marginRight="77dp" />
 
     <Button
         android:id="@+id/dequeue"
@@ -46,21 +46,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=""
-        android:textSize="20sp"
+        android:textSize="30sp"
         android:visibility="visible"
         android:layout_marginStart="56dp"
         app:layout_constraintBaseline_toBaselineOf="@+id/q2"
         tools:layout_constraintBaseline_creator="1"
         tools:layout_constraintLeft_creator="1"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="223dp" />
+        android:layout_marginLeft="56dp" />
 
     <TextView
         android:id="@+id/q2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=""
-        android:textSize="20sp"
+        android:textSize="30sp"
         tools:layout_constraintRight_creator="1"
         app:layout_constraintRight_toRightOf="@+id/enqueue"
         app:layout_constraintBaseline_toBaselineOf="@+id/q3"
@@ -71,7 +71,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=""
-        android:textSize="20sp"
+        android:textSize="30sp"
         app:layout_constraintRight_toLeftOf="@+id/dequeue"
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintBottom_creator="1"
@@ -83,7 +83,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=""
-        android:textSize="20sp"
+        android:textSize="30sp"
         tools:layout_constraintRight_creator="1"
         android:layout_marginEnd="55dp"
         app:layout_constraintRight_toRightOf="parent"
@@ -93,30 +93,33 @@
 
     <TextView
         android:id="@+id/randomLetter"
-        android:layout_width="46dp"
-        android:layout_height="37dp"
+        android:layout_width="78dp"
+        android:layout_height="76dp"
         android:text=""
         android:gravity="center"
         android:background="@drawable/back"
         tools:layout_constraintTop_creator="1"
         tools:layout_constraintRight_creator="1"
-        android:layout_marginStart="101dp"
-        android:layout_marginEnd="101dp"
         android:layout_marginTop="188dp"
         tools:layout_constraintLeft_creator="1"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:textSize="30sp"/>
 
     <TextView
         android:id="@+id/score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Your Score: 0"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="28dp" />
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="39dp"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="16dp"
+        android:textSize="30sp"/>
 
 
 </android.support.constraint.ConstraintLayout>

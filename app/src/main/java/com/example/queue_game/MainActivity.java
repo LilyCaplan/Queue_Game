@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
                 });
             }
         };
-        gameTimer.schedule(gameTask, 10000, 1000);
+        gameTimer.schedule(gameTask, 0, 800);
         Log.d(TAG,"boxletter: " + boxLetter);
     }
 
