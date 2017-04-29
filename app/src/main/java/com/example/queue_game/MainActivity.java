@@ -37,12 +37,10 @@ public class MainActivity extends AppCompatActivity {
         long secondCounter = System.currentTimeMillis() * 1000; //returns the current millseconds
         while (secondCounter < (secondCounter * 5000)) { //to be less then 5 seconds
             this.letterCreator();
-            TextView textView = (TextView) findViewById(R.id.main);
+            TextView textView = (TextView) findViewById(R.id.randomLetter);
             textView.setText(boxLetter);
 
         }
-
-
     }
 
     public void letterCreator() {
@@ -52,18 +50,17 @@ public class MainActivity extends AppCompatActivity {
                 boxLetter = (char) R.string.A;
                 break;
             case 2:
-                boxLetter = 'b';
+                boxLetter = (char) R.string.B;
                 break;
             case 3:
-                boxLetter = 'c';
+                boxLetter = (char) R.string.C;
                 break;
             case 4:
-                boxLetter = 'd';
+                boxLetter = (char) R.string.D;
                 break;
             default:
                 System.out.println("Didn't work");
         }
-
 
     }
 
@@ -148,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void setScore(Character fromBox) {
-        if (fromBox == 'a') {
+        if (fromBox == (char) R.string.A){
             amountA++;
             if (amountA == 3) {
                 score = score * 2;
@@ -157,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 score++;
             }
-        } else if(boxLetter == 'b') {
+        } else if(boxLetter == (char) R.string.B) {
                 amountB++;
                 if (amountB == 3) {
                     score = score * 2;
@@ -166,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     score++;
                 }
-            } else if (boxLetter == 'c') {
+            } else if (boxLetter == (char) R.string.C) {
             amountC++;
             if (amountC == 3) {
                 score = score * 2;
@@ -175,7 +172,7 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 score++;
             }
-        } else {
+        } else if (boxLetter == (char) R.string.D){
             amountD++;
             if (amountD == 3) {
                 score = score * 2;

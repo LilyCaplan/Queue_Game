@@ -90,7 +90,7 @@
         android:layout_marginRight="55dp" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/randomLetter"
         android:layout_width="46dp"
         android:layout_height="37dp"
         android:text="@string/randomChar"
