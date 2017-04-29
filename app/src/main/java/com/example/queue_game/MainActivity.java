@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         return boxLetter;
     }
 
-    public void enqueue() {
+    public void enqueue(View view) {
         if (this.queue.size() == 4) {
             System.out.println("size is 5");
         } else if (this.queue.size() == 0) {
@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void dequeue() {
+    public void dequeue(View view) {
         if (this.queue.size() == 1) {
             this.queue.remove();
             TextView textView = (TextView) findViewById(R.id.q1);
