@@ -30,63 +30,52 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
     }
-
-    protected void onStart(View view) {
-
+    @Override
+    protected void onStart() {
         long secondCounter = System.currentTimeMillis() * 1000; //returns the current millseconds
-        while (secondCounter < (secondCounter * 5000)) { //to be less then 5 seconds
-            this.letterCreator();
+            letterCreator();
             TextView textView = (TextView) findViewById(R.id.randomLetter);
-            textView.setText(boxLetter);
-        }
-
+            textView.setText(boxLetter.toString());
+        super.onStart();
     }
 
-    public Character letterCreator() {
+    public void letterCreator() {
         int letterPicker = rand.nextInt(4) + 1;
         switch (letterPicker) {
             case 1:
-                boxLetter = (char) R.string.A;
+                boxLetter = 'A';
                 break;
             case 2:
-                boxLetter = (char) R.string.B;
+                boxLetter = 'B';
                 break;
             case 3:
-                boxLetter = (char) R.string.C;
+                boxLetter = 'C';
                 break;
             case 4:
-                boxLetter = (char) R.string.D;
+                boxLetter = 'D';
                 break;
             default:
                 System.out.println("Didn't work");
         }
-        return boxLetter;
     }
 
 
-    public void enqueue() {
-        if (this.queue.size() == 5) {
-            System.out.println("size is 5");
-        } else if (this.queue.size() == 0) {
+    public void enqueue(View v) {
+        if (this.queue.size() == 0) {
             queue.add(boxLetter);
-            this.setScore(boxLetter);
-            TextView textView = (TextView) findViewById(R.id.q1);
-            textView.setText(boxLetter);
+            System.out.println(boxLetter);
         } else if (this.queue.size() == 1) {
             queue.add(boxLetter);
-            this.setScore(boxLetter);
-            TextView textView = (TextView) findViewById(R.id.q2);
-            textView.setText(boxLetter);
+            System.out.println(boxLetter);
+
         } else if (this.queue.size() == 2) {
             queue.add(boxLetter);
-            this.setScore(boxLetter);
-            TextView textView = (TextView) findViewById(R.id.q3);
-            textView.setText(boxLetter);
+            System.out.println(boxLetter);
+
         } else if (this.queue.size() == 3) {
             queue.add(boxLetter);
-            this.setScore(boxLetter);
-            TextView textView = (TextView) findViewById(R.id.q4);
-            textView.setText(boxLetter);
+            System.out.println(boxLetter);
+
         }
 
     }
@@ -125,8 +114,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void setScore(Character fromBox) {
-        if (fromBox == (char) R.string.A){
+    public void setScore() {
+        if (boxLetter == 'A'){
             amountA++;
             if (amountA == 3) {
                 score = score * 2;
@@ -135,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 score++;
             }
-        } else if(boxLetter == (char) R.string.B) {
+        } else if(boxLetter == 'B') {
                 amountB++;
                 if (amountB == 3) {
                     score = score * 2;
@@ -144,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     score++;
                 }
-            } else if (boxLetter == (char) R.string.C) {
+        } else if (boxLetter == 'C') {
             amountC++;
             if (amountC == 3) {
                 score = score * 2;
@@ -153,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 score++;
             }
-        } else if (boxLetter == (char) R.string.D){
+        } else if (boxLetter == 'D'){
             amountD++;
             if (amountD == 3) {
                 score = score * 2;
