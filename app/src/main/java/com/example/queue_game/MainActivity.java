@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void enqueue() {
+    public void enqueue(View view) {
         if (this.queue.size() == 4) {
             System.out.println("size is 5");
         } else if (this.queue.size() == 0) {
@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void dequeue() {
+    public void dequeue(View view) {
         if (this.queue.size() == 1) {
             this.queue.remove();
             TextView textView = (TextView) findViewById(R.id.q1);
@@ -157,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void setScore() {
-        if (boxLetter == (char) R.string.A){
+        if (boxLetter == 'a'){
             amountA++;
             if (amountA == 3) {
                 score = score * 2;
@@ -166,7 +166,7 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 score++;
             }
-        } else if(boxLetter == (char) R.string.B) {
+        } else if(boxLetter == 'b') {
                 amountB++;
                 if (amountB == 3) {
                     score = score * 2;
@@ -175,7 +175,7 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     score++;
                 }
-            } else if (boxLetter == (char) R.string.C) {
+            } else if (boxLetter == 'c') {
             amountC++;
             if (amountC == 3) {
                 score = score * 2;
@@ -184,7 +184,7 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 score++;
             }
-        } else if (boxLetter == (char) R.string.D){
+        } else if (boxLetter == 'd'){
             amountD++;
             if (amountD == 3) {
                 score = score * 2;
