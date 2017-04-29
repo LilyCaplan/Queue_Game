@@ -1,100 +1,138 @@
 package com.example.queue_game;
 
+import android.net.wifi.p2p.WifiP2pManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Timer;
+
 import java.util.Random;
+
+import java.util.TimerTask;
+import java.util.logging.Handler;
+
 
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.util.Log;
+
 
 
 
 public class MainActivity extends AppCompatActivity {
     private Queue<Character> queue = new LinkedList<>();
-    private Random rand = new Random();
     private Character boxLetter; // the letter that will show up in the center of the screen
     private int score;
-    int amountA = 0;
-    int amountB = 0;
-    int amountC = 0;
-    int amountD = 0;
+    private int amountA = 0;
+    private int amountB = 0;
+    private int amountC = 0;
+    private int amountD = 0;
+    private Random rand= new Random();
+    private Timer gameTimer= new Timer();
+
+
+    private static final String TAG = "MyActivity";
+
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
     }
+
     @Override
-    protected void onStart() {
-        long secondCounter = System.currentTimeMillis() * 1000; //returns the current millseconds
-            letterCreator();
-            TextView textView = (TextView) findViewById(R.id.randomLetter);
-            textView.setText(boxLetter.toString());
+    protected void onStart()  {
         super.onStart();
+        TimerTask gameTask = new TimerTask() {
+            @Override
+            public void run() {
+                letterCreator();
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        TextView textView = (TextView) findViewById(R.id.randomLetter);
+                        textView.setText(boxLetter.toString());
+                    }
+                });
+            }
+        };
+        gameTimer.schedule( gameTask, 10000, 1000);
+        Log.d(TAG,"boxletter: " + boxLetter);
+
     }
 
-    public void letterCreator() {
+
+
+    public Character letterCreator() {
         int letterPicker = rand.nextInt(4) + 1;
         switch (letterPicker) {
             case 1:
-                boxLetter = 'A';
+                boxLetter = 'a';
                 break;
             case 2:
-                boxLetter = 'B';
+                boxLetter = 'b';
                 break;
             case 3:
-                boxLetter = 'C';
+                boxLetter = 'c';
                 break;
             case 4:
-                boxLetter = 'D';
+                boxLetter = 'd';
                 break;
             default:
                 System.out.println("Didn't work");
         }
+        return boxLetter;
     }
 
-
-    public void enqueue(View v) {
-        if (this.queue.size() == 0) {
+    public void enqueue() {
+        if (this.queue.size() == 4) {
+            System.out.println("size is 5");
+        } else if (this.queue.size() == 0) {
             queue.add(boxLetter);
-            System.out.println(boxLetter);
+            this.setScore();
+            TextView textView = (TextView) findViewById(R.id.q1);
+            textView.setText(boxLetter.toString());
         } else if (this.queue.size() == 1) {
             queue.add(boxLetter);
-            System.out.println(boxLetter);
-
+            this.setScore();
+            TextView textView = (TextView) findViewById(R.id.q2);
+            textView.setText(boxLetter.toString());
         } else if (this.queue.size() == 2) {
             queue.add(boxLetter);
-            System.out.println(boxLetter);
-
+            this.setScore();
+            TextView textView = (TextView) findViewById(R.id.q3);
+            textView.setText(boxLetter.toString());
         } else if (this.queue.size() == 3) {
             queue.add(boxLetter);
-            System.out.println(boxLetter);
-
+            this.setScore();
+            TextView textView = (TextView) findViewById(R.id.q4);
+            textView.setText(boxLetter.toString());
         }
 
     }
 
     public void dequeue() {
         if (this.queue.size() == 1) {
-            //remove elemnt
+            this.queue.remove();
+            TextView textView = (TextView) findViewById(R.id.q1);
+            textView.setText("");
         } else if (this.queue.size() == 2) {
             this.queue.remove();
             TextView textView = (TextView) findViewById(R.id.q1);
             textView.setText("");
-            textView.setText(queue.peek());
+            textView.setText(queue.peek().toString());
             TextView nextView = (TextView) findViewById(R.id.q2);
             nextView.setText("");
         } else if (this.queue.size() == 3) {
             this.queue.remove();
             TextView textView = (TextView) findViewById(R.id.q1);
             textView.setText("");
-            textView.setText(queue.peek());
+            textView.setText(queue.peek().toString());
             TextView secondView = (TextView) findViewById(R.id.q2);
             TextView thirdView = (TextView) findViewById(R.id.q3);
             secondView.setText(thirdView.getText());
@@ -103,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
             this.queue.remove();
             TextView textView = (TextView) findViewById(R.id.q1);
             textView.setText("");
-            textView.setText(queue.peek());
+            textView.setText(queue.peek().toString());
             TextView secondView = (TextView) findViewById(R.id.q2);
             TextView thirdView = (TextView) findViewById(R.id.q3);
             secondView.setText(thirdView.getText());
@@ -114,8 +152,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void setScore() {
-        if (boxLetter == 'A'){
+    public void setScore(){
+
+        if (boxLetter == (char) R.string.A){
             amountA++;
             if (amountA == 3) {
                 score = score * 2;
