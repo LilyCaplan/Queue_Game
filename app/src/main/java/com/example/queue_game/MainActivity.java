@@ -88,7 +88,6 @@ public class MainActivity extends AppCompatActivity {
         }
         return boxLetter;
     }
-
     public void enqueue(View view) {
         if (this.queue.size() == 4) {
             System.out.println("size is 5");
@@ -150,11 +149,8 @@ public class MainActivity extends AppCompatActivity {
             fourthView.setText("");
         }
     }
-
-
-    public void setScore(){
-
-        if (boxLetter == (char) R.string.A){
+    public void setScore() {
+        if (boxLetter == 'a'){
             amountA++;
             if (amountA == 3) {
                 score = score * 2;
@@ -163,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 score++;
             }
-        } else if(boxLetter == 'B') {
+        } else if(boxLetter == 'b') {
                 amountB++;
                 if (amountB == 3) {
                     score = score * 2;
@@ -172,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     score++;
                 }
-        } else if (boxLetter == 'C') {
+            } else if (boxLetter == 'c') {
             amountC++;
             if (amountC == 3) {
                 score = score * 2;
@@ -181,7 +177,8 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 score++;
             }
-        } else if (boxLetter == 'D'){
+
+        } else if (boxLetter == 'd'){
             amountD++;
             if (amountD == 3) {
                 score = score * 2;
