@@ -41,11 +41,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        letterCreator();
+        TextView textView = (TextView) findViewById(R.id.randomLetter);
+        textView.setText(boxLetter.toString());
     }
 
     @Override
     protected void onStart(){
         super.onStart();
+
         TimerTask gameTask = new TimerTask(){
             @Override
             public void run(){
