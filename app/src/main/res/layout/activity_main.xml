@@ -96,19 +96,17 @@
         android:text="@string/randomChar"
         android:gravity="center"
         android:background="@drawable/back"
-        app:layout_constraintRight_toLeftOf="@+id/q4"
         tools:layout_constraintTop_creator="1"
         tools:layout_constraintRight_creator="1"
         android:layout_marginStart="101dp"
         android:layout_marginEnd="101dp"
         android:layout_marginTop="188dp"
         tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="@+id/q1"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="101dp"
-        android:layout_marginRight="101dp"
-        app:layout_constraintHorizontal_bias="1.0"
-        tools:layout_editor_absoluteX="169dp" />
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
 
 </android.support.constraint.ConstraintLayout>

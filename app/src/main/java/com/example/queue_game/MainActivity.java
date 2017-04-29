@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
     }
 
     protected void onStart(View view) {
@@ -39,11 +38,11 @@ public class MainActivity extends AppCompatActivity {
             this.letterCreator();
             TextView textView = (TextView) findViewById(R.id.randomLetter);
             textView.setText(boxLetter);
-
         }
+
     }
 
-    public void letterCreator() {
+    public Character letterCreator() {
         int letterPicker = rand.nextInt(4) + 1;
         switch (letterPicker) {
             case 1:
@@ -61,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
             default:
                 System.out.println("Didn't work");
         }
-
+        return boxLetter;
     }
 
 
@@ -87,11 +86,6 @@ public class MainActivity extends AppCompatActivity {
             queue.add(boxLetter);
             this.setScore(boxLetter);
             TextView textView = (TextView) findViewById(R.id.q4);
-            textView.setText(boxLetter);
-        } else if (this.queue.size() == 4) {
-            queue.add(boxLetter);
-            this.setScore(boxLetter);
-            TextView textView = (TextView) findViewById(R.id.q5);
             textView.setText(boxLetter);
         }
 
@@ -127,19 +121,6 @@ public class MainActivity extends AppCompatActivity {
             TextView fourthView = (TextView) findViewById(R.id.q4);
             thirdView.setText(fourthView.getText());
             fourthView.setText("");
-        } else {
-            this.queue.remove();
-            TextView textView = (TextView) findViewById(R.id.q1);
-            textView.setText("");
-            textView.setText(queue.peek());
-            TextView secondView = (TextView) findViewById(R.id.q2);
-            TextView thirdView = (TextView) findViewById(R.id.q3);
-            secondView.setText(thirdView.getText());
-            TextView fourthView = (TextView) findViewById(R.id.q4);
-            thirdView.setText(fourthView.getText());
-            TextView fifthView = (TextView) findViewById(R.id.q5);
-            fourthView.setText(fifthView.getText());
-            fifthView.setText("");
         }
     }
 
