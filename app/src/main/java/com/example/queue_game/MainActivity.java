@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private int amountD = 0;
     private Random rand= new Random();
     private Timer gameTimer= new Timer();
-
+    private String yourScore = "Your Score: ";
 
     private static final String TAG = "MyActivity";
 
@@ -122,10 +122,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void dequeue(View view) {
         if (this.queue.size() == 1) {
+            this.checkQueueChar();
             this.queue.remove();
             TextView textView = (TextView) findViewById(R.id.q1);
             textView.setText("");
+
         } else if (this.queue.size() == 2) {
+            this.checkQueueChar();
             this.queue.remove();
             TextView textView = (TextView) findViewById(R.id.q1);
             textView.setText("");
@@ -133,6 +136,7 @@ public class MainActivity extends AppCompatActivity {
             TextView nextView = (TextView) findViewById(R.id.q2);
             nextView.setText("");
         } else if (this.queue.size() == 3) {
+            this.checkQueueChar();
             this.queue.remove();
             TextView textView = (TextView) findViewById(R.id.q1);
             textView.setText("");
@@ -142,6 +146,7 @@ public class MainActivity extends AppCompatActivity {
             secondView.setText(thirdView.getText());
             thirdView.setText("");
         } else if (this.queue.size() == 4) {
+            this.checkQueueChar();
             this.queue.remove();
             TextView textView = (TextView) findViewById(R.id.q1);
             textView.setText("");
@@ -166,6 +171,10 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 score++;
             }
+            Log.d(TAG, "Your score: " + score);
+            TextView textView = (TextView) findViewById(R.id.score);
+            String temp = yourScore + score;
+            textView.setText(temp);
         } else if(boxLetter == 'b') {
                 amountB++;
                 if (amountB == 3) {
@@ -175,6 +184,10 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     score++;
                 }
+            Log.d(TAG, "Your score: " + score);
+            TextView textView = (TextView) findViewById(R.id.score);
+            String temp = yourScore + score;
+            textView.setText(temp);
             } else if (boxLetter == 'c') {
             amountC++;
             if (amountC == 3) {
@@ -184,6 +197,11 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 score++;
             }
+            Log.d(TAG, "Your score: " + score);
+
+            TextView textView = (TextView) findViewById(R.id.score);
+            String temp = yourScore + score;
+            textView.setText(temp);
         } else if (boxLetter == 'd'){
             amountD++;
             if (amountD == 3) {
@@ -193,7 +211,25 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 score++;
             }
+            Log.d(TAG, "Your score: " + score);
+
+            TextView textView = (TextView) findViewById(R.id.score);
+            String temp = yourScore + score;
+            textView.setText(temp);
+        }
+    }
+    public void checkQueueChar(){
+        char temp = queue.peek();
+        if (temp == 'a'){
+            amountA--;
+        } else if(temp=='b'){
+            amountB--;
+        } else if (temp == 'c'){
+            amountC--;
+        } else {
+            amountD--;
         }
     }
 
 }
+
