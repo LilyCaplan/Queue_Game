@@ -37,8 +37,6 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MyActivity";
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,11 +44,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onStart()  {
+    protected void onStart(){
         super.onStart();
-        TimerTask gameTask = new TimerTask() {
+        TimerTask gameTask = new TimerTask(){
             @Override
-            public void run() {
+            public void run(){
                 letterCreator();
                 runOnUiThread(new Runnable() {
                     @Override
@@ -61,11 +59,9 @@ public class MainActivity extends AppCompatActivity {
                 });
             }
         };
-        gameTimer.schedule( gameTask, 10000, 1000);
+        gameTimer.schedule(gameTask, 10000, 1000);
         Log.d(TAG,"boxletter: " + boxLetter);
-
     }
-
 
 
     public Character letterCreator() {
